@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.grid-container {
+  display: grid; 
+  grid-template-columns: 250px 1fr;  /* колонка для сайдбара + остальное */
+  grid-template-rows: 80px 1fr 60px; /* header, контент, footer */
+  grid-template-areas: 
+    "header header"
+    "sidebar main"
+    "footer footer";
+  height: 100vh;
+}
+
+/* Header */
+.header {
+  grid-area: header;
+  background: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+/* Sidebar - маленькое окошко */
+.sidebar {
+  grid-area: sidebar;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;   /* фиксированный размер */
+  height: 200px;  /* фиксированный размер */
+  margin: 20px auto; /* центрируем внутри своей колонки */
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Main Content - по центру */
+.main {
+  grid-area: main;
+  background: #fff;
+  display: flex;
+  justify-content: center; /* по горизонтали */
+  align-items: center;     /* по вертикали */
+  font-size: 20px;
+  border: 2px solid #ccc;
+  margin: 20px;
+}
+
+/* Footer */
+.footer {
+  grid-area: footer;
+  background: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
